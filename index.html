@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JR Treinador | Personal Trainer — Alta Performance</title>
+<meta name="description" content="André Junior (JR), treinador: alta performance esportiva, saúde e qualidade de vida, emagrecimento e hipertrofia. Presencial em São Paulo e consultoria online para o mundo inteiro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#04060d; --bg2:#0a0f1f; --card:#0d1428; --line:#1b2547;
+    --blue:#1f6bff; --neon:#3fa9ff; --glow:0 0 24px rgba(63,169,255,.55);
+    --text:#e8eeff; --muted:#93a0c4;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:72px}
+  body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+  h1,h2,h3{font-family:"Bebas Neue",Impact,sans-serif;font-weight:400;letter-spacing:.02em;line-height:1}
+  h2{font-size:clamp(40px,6vw,64px);margin-bottom:16px}
+  h2 span,h1 span,h3 span{color:var(--neon);text-shadow:var(--glow)}
+  .eyebrow{color:var(--neon);font-weight:600;font-size:13px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:10px;display:block}
+  .lead{color:var(--muted);font-size:18px;max-width:680px}
+  section{padding:96px 0}
+  .alt{background:var(--bg2)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--blue);color:#fff;font-weight:700;padding:16px 28px;border-radius:999px;box-shadow:0 0 0 1px var(--neon),var(--glow);transition:.2s;border:0;font:inherit;font-weight:700;cursor:pointer}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 0 0 1px var(--neon),0 0 40px rgba(63,169,255,.8)}
+  .btn.ghost{background:transparent;box-shadow:inset 0 0 0 1px var(--line)}
+  .btn.ghost:hover{box-shadow:inset 0 0 0 1px var(--neon)}
+  .actions{display:flex;gap:12px;flex-wrap:wrap}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:20;background:rgba(4,6,13,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+  .logo{font-family:"Bebas Neue";font-size:30px;letter-spacing:.04em;white-space:nowrap}
+  .logo b{color:var(--neon);text-shadow:var(--glow);font-weight:400}
+  .menu{display:flex;gap:22px;font-size:14px;color:var(--muted)}
+  .menu a:hover{color:var(--text)}
+  nav .btn{padding:10px 20px;font-size:14px;white-space:nowrap}
+
+  /* hero */
+  .hero{position:relative;overflow:hidden;padding:72px 0 40px}
+  .hero::before{content:"";position:absolute;inset:-20% -10% auto auto;width:700px;height:700px;background:radial-gradient(circle,rgba(31,107,255,.35),transparent 60%)}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;position:relative}
+  .hero h1{font-size:clamp(64px,10vw,128px)}
+  .hero p{color:var(--muted);font-size:19px;max-width:540px;margin:20px 0 32px}
+  .hero-photo{position:relative;aspect-ratio:4/5;border-radius:28px;overflow:hidden;border:1px solid var(--neon);box-shadow:var(--glow)}
+  .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+  .badge{position:absolute;left:16px;bottom:16px;background:rgba(4,6,13,.85);border:1px solid var(--line);border-radius:14px;padding:10px 14px;font-size:13px}
+  .badge b{color:var(--neon)}
+  .nums{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:20px;background:var(--bg2);margin-top:56px}
+  .nums div{padding:26px 18px;text-align:center;border-right:1px solid var(--line)}
+  .nums div:last-child{border:0}
+  .nums strong{display:block;font-family:"Bebas Neue";font-size:46px;color:var(--neon);text-shadow:var(--glow);line-height:1.05}
+  .nums span{color:var(--muted);font-size:14px}
+
+  /* story (texto e fotos alternados) */
+  .story{display:grid;gap:72px;margin-top:48px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .row.rev .media{order:2}
+  .media{border-radius:24px;overflow:hidden;aspect-ratio:4/3;border:1px solid var(--line);background:var(--card)}
+  .media img{width:100%;height:100%;object-fit:cover}
+  .ph{display:grid;place-items:center;text-align:center;color:var(--muted);font-size:14px;border:1px dashed var(--neon);background:repeating-linear-gradient(45deg,var(--card),var(--card) 12px,#0f1830 12px,#0f1830 24px)}
+  .ph b{display:block;font-size:34px;margin-bottom:6px}
+  .row h3{font-size:40px;margin-bottom:12px}
+  .row p{color:var(--muted);margin-bottom:12px}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+  .chips span{border:1px solid var(--line);background:var(--card);padding:7px 14px;border-radius:999px;font-size:14px}
+  .chips.neon span{border-color:var(--blue);color:var(--neon)}
+  .quote{font-family:"Bebas Neue";font-size:clamp(30px,4vw,46px);line-height:1.1;text-align:center;max-width:900px;margin:0 auto}
+  .quote span{color:var(--neon);text-shadow:var(--glow)}
+  .beliefs{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+  .beliefs div{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;color:var(--muted);font-size:15px}
+  .beliefs div::before{content:"⚡";display:block;font-size:20px;margin-bottom:8px}
+
+  /* missão */
+  .mv{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px}
+  .mv div{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:32px}
+  .mv h3{font-size:34px;margin-bottom:10px}
+  .mv p{color:var(--muted)}
+  .values{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px}
+  .values div{border:1px solid var(--line);border-radius:18px;padding:20px;background:linear-gradient(180deg,rgba(31,107,255,.1),transparent)}
+  .values b{display:block;color:var(--neon);margin-bottom:4px}
+  .values small{color:var(--muted);font-size:14px}
+
+  /* serviços */
+  .svc{display:grid;gap:64px;margin-top:48px}
+  .svc .row h3{font-size:44px}
+  .num{font-family:"Bebas Neue";font-size:20px;color:var(--neon);letter-spacing:.1em}
+  .ticks{list-style:none;margin-top:14px}
+  .ticks li{padding:9px 0;border-bottom:1px dashed var(--line)}
+  .ticks li::before{content:"⚡ ";color:var(--neon)}
+
+  /* método */
+  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:40px;counter-reset:s}
+  .step{padding:26px 20px;border-top:2px solid var(--neon);background:linear-gradient(180deg,rgba(31,107,255,.12),transparent);border-radius:0 0 16px 16px}
+  .step::before{counter-increment:s;content:"0" counter(s);font-family:"Bebas Neue";font-size:48px;color:var(--neon);text-shadow:var(--glow)}
+  .step b{display:block;margin:6px 0}
+  .step p{color:var(--muted);font-size:14px}
+
+  /* resultados */
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+  .res{border-radius:20px;overflow:hidden;border:1px solid var(--line);background:#000}
+  .res img{width:100%;aspect-ratio:3/4;object-fit:cover}
+  .res .ctx{padding:16px 18px;background:var(--card);font-size:14px;color:var(--muted)}
+  .res .ctx b{color:var(--neon);display:block;font-size:15px}
+  .testis{display:grid;gap:16px;margin-top:20px}
+  .testi{border-radius:18px;padding:24px;min-height:150px}
+  .note{color:var(--muted);font-size:13px;margin-top:18px}
+  .video{position:relative;overflow:hidden;padding:0;border:1px solid var(--neon);box-shadow:var(--glow)}
+  .video img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0;opacity:.55;transition:.3s}
+  .video{min-height:200px}
+  .video:hover img{opacity:.8}
+  .video span{position:absolute;left:18px;bottom:16px;font-weight:700}
+
+  /* consultoria */
+  .how{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px}
+  .card .ico{width:52px;height:52px;margin-bottom:14px;border-radius:14px;display:grid;place-items:center;font-size:24px;background:rgba(31,107,255,.15);border:1px solid var(--blue);box-shadow:var(--glow)}
+  .card b{display:block;margin-bottom:6px}
+  .card small{color:var(--muted);font-size:14px;display:block}
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px;align-items:stretch}
+  .plan{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:34px 28px;display:flex;flex-direction:column;position:relative}
+  .plan.top{border-color:var(--neon);box-shadow:var(--glow);transform:translateY(-8px)}
+  .plan .flag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--blue);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 14px;border-radius:999px;white-space:nowrap}
+  .plan h3{font-size:38px}
+  .plan .per{color:var(--muted);font-size:14px}
+  .price{font-family:"Bebas Neue";font-size:62px;line-height:1;margin:18px 0 4px;color:var(--text)}
+  .price small{font-size:26px;color:var(--muted)}
+  .month{color:var(--neon);font-size:14px;margin-bottom:20px}
+  .plan ul{list-style:none;color:var(--muted);font-size:14px;margin-bottom:24px;flex:1}
+  .plan li{padding:6px 0}
+  .plan li::before{content:"✓ ";color:var(--neon)}
+  .hire{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+  .hire div{display:flex;gap:14px;align-items:flex-start;color:var(--muted);font-size:15px}
+  .hire i{font-style:normal;font-family:"Bebas Neue";font-size:34px;line-height:1;color:var(--neon);text-shadow:var(--glow)}
+
+  /* presencial */
+  .inperson{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+  .info{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0}
+  .info span{border:1px solid var(--line);border-radius:12px;padding:12px 16px;font-size:14px;color:var(--muted);background:var(--card)}
+  .info b{color:var(--text)}
+
+  /* faq */
+  .faq .wrap{max-width:860px}
+  details{border-bottom:1px solid var(--line);padding:20px 0}
+  summary{cursor:pointer;font-weight:600;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";color:var(--neon);font-size:24px;line-height:1}
+  details[open] summary::after{content:"–"}
+  details p{color:var(--muted);margin-top:10px}
+
+  /* contato */
+  .contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;margin-top:40px}
+  .links{display:grid;gap:12px}
+  .links a{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;transition:.2s}
+  .links a:hover{border-color:var(--neon);box-shadow:var(--glow)}
+  .links i{font-style:normal;font-size:24px}
+  .links small{display:block;color:var(--muted);font-size:13px}
+  form{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px;display:grid;gap:14px}
+  label{font-size:13px;color:var(--muted);display:grid;gap:6px}
+  input,select,textarea{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:13px 14px;color:var(--text);font:inherit;font-size:15px}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--neon);box-shadow:var(--glow)}
+  textarea{min-height:100px;resize:vertical}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+  footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:14px}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  .wpp{position:fixed;right:20px;bottom:20px;width:60px;height:60px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 8px 30px rgba(37,211,102,.5);z-index:30}
+  .wpp svg{width:32px;height:32px;fill:#fff}
+
+  @media (max-width:1000px){
+    .menu{display:none}
+    .steps{grid-template-columns:1fr 1fr}
+    .beliefs,.values,.how{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:760px){
+    .logo{font-size:22px}
+    nav .btn{padding:9px 16px;font-size:13px}
+    .hero .wrap,.row,.mv,.contact,.two{grid-template-columns:1fr}
+    .row{gap:24px}
+    .row.rev .media{order:0}
+    .nums{grid-template-columns:1fr 1fr}
+    .nums div:nth-child(2){border-right:0}
+    .nums div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+    .grid3,.testis,.plans,.hire,.inperson{grid-template-columns:1fr}
+    .plan.top{transform:none}
+    .beliefs,.values,.how,.steps{grid-template-columns:1fr}
+    section{padding:64px 0}
+    .story,.svc{gap:48px}
+  }
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a href="#" class="logo">JR <b>⚡</b> ALTA PERFORMANCE</a>
+  <div class="menu"><a href="#sobre">Quem sou eu</a><a href="#servicos">Serviços</a><a href="#metodo">Método</a><a href="#consultoria">Consultoria</a><a href="#presencial">Presencial</a><a href="#faq">Dúvidas</a></div>
+  <a class="btn" href="#contato">Fale comigo</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div>
+    <span class="eyebrow">André Junior · Treinador</span>
+    <h1>Vamo pro <span>choque</span> ⚡</h1>
+    <p>Treinamento individualizado para alta performance esportiva, saúde e qualidade de vida, emagrecimento e hipertrofia. Presencial em São Paulo e consultoria online para o mundo inteiro.</p>
+    <div class="actions">
+      <a class="btn" href="#planos">Conheça os planos →</a>
+      <a class="btn ghost" href="#contato">Solicite uma avaliação</a>
+    </div>
+  </div>
+  <div class="hero-photo">
+    <img src="fotos/jr-kettlebell.png" alt="André Junior segurando um kettlebell">
+    <div class="badge">🎓 <b>Educação Física</b> + especialista em Alta Performance</div>
+  </div>
+</div>
+<div class="wrap"><div class="nums">
+  <div><strong>+100</strong><span>alunos com resultados</span></div>
+  <div><strong>7 dias</strong><span>de suporte por semana</span></div>
+  <div><strong>SP</strong><span>atendimento presencial</span></div>
+  <div><strong>🌎</strong><span>consultoria online no mundo todo</span></div>
+</div></div>
+</header>
+
+<!-- QUEM SOU EU -->
+<section id="sobre"><div class="wrap">
+  <span class="eyebrow">Quem sou eu</span>
+  <h2>André Junior — <span>treinador e administrador</span></h2>
+  <div class="story">
+    <div class="row">
+      <div class="media"><img src="fotos/jr-athletic-lab.webp" alt="André Junior na Athletic Lab Coaching Academy" style="object-position:50% 30%"></div>
+      <div>
+        <h3>Formação</h3>
+        <p>Formado em <b>Administração</b> e <b>Educação Física (Bacharelado)</b>, especialista em <b>Treinamento Funcional</b> e <b>Alta Performance Esportiva</b>.</p>
+        <div class="chips neon"><span>Athletic Lab</span><span>CVTF 1</span><span>CVTF 2</span><span>Quiropraxia</span><span>Ventosaterapia</span></div>
+      </div>
+    </div>
+    <div class="row rev">
+      <div class="media"><img src="fotos/jr-entrevista.png" alt="André Junior em entrevista" style="object-position:72% 50%"></div>
+      <div>
+        <h3>De onde eu vim</h3>
+        <p>Sou ex-atleta da categoria de base no futebol de campo e federado no futsal, com passagem por:</p>
+        <div class="chips"><span>Milan Junior Camp</span><span>Red Bull</span><span>Corinthians</span><span>São Caetano</span><span>Clube Esportivo da Penha</span><span>Elite Itaquerense</span></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="media"><img src="fotos/jr-futsal-sao-caetano.jpg" alt="André Junior jogando futsal pelo São Caetano"></div>
+      <div>
+        <h3>A lesão que <span>mudou meu caminho</span></h3>
+        <p>Não segui como profissional porque, no último ano de sub-20, rompi o LCA e o menisco do joelho.</p>
+        <p>Fiz cirurgia, reabilitação e voltei ao esporte sem dores e sem limitações. Essa experiência me levou a trabalhar com preparação física — para ajudar atletas a se fortalecer e reduzir o risco de lesões dentro do esporte.</p>
+      </div>
+    </div>
+    <div class="row rev">
+      <div class="media"><img src="fotos/jr-natacao.jpg" alt="André Junior nadando"></div>
+      <div>
+        <h3>Hoje: <span>atleta de endurance</span></h3>
+        <p>Pratico natação, ciclismo e corrida. Faço travessias em águas abertas (mar e represa) e provas de ciclismo e corrida de longa distância — vivendo na prática o que ensino.</p>
+        <p>Tenho experiência com atletas profissionais, de categoria de base e amadores.</p>
+        <div class="chips"><span>🏊 Natação</span><span>🚴 Ciclismo</span><span>🏃 Corrida</span><span>🌊 Águas abertas</span></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <p class="quote">Cada pessoa tem uma história, uma rotina e um objetivo. O treinamento deve ser <span>individualizado</span> — não copiado de outra pessoa.</p>
+  <div class="beliefs">
+    <div>A evolução depende de planejamento, consistência e acompanhamento.</div>
+    <div>O exercício físico contribui tanto para o desempenho esportivo quanto para a saúde e a qualidade de vida.</div>
+    <div>O objetivo é desenvolver capacidades físicas de forma adequada às necessidades de cada aluno.</div>
+    <div>Avaliação inicial, treino guiado por princípios científicos e experiência prática, e ajustes conforme o serviço contratado.</div>
+  </div>
+</div></section>
+
+<!-- MISSÃO VISÃO VALORES -->
+<section><div class="wrap">
+  <span class="eyebrow">No que eu acredito</span>
+  <h2>Missão, visão <span>e valores</span></h2>
+  <div class="mv">
+    <div><h3>Missão</h3><p>Promover saúde, qualidade de vida, desenvolvimento físico e desempenho esportivo por meio de treinamentos individualizados e estratégias adequadas aos objetivos, às necessidades e à realidade de cada pessoa.</p></div>
+    <div><h3>Visão</h3><p>Ser referência em treinamento personalizado e preparação física, reconhecido pela qualidade do atendimento, pela busca constante de conhecimento e pelo compromisso com a evolução dos alunos e atletas.</p></div>
+  </div>
+  <div class="values">
+    <div><b>Individualidade</b><small>Cada pessoa possui necessidades e objetivos próprios.</small></div>
+    <div><b>Ciência e atualização</b><small>Buscar conhecimento para aprimorar as estratégias de treino.</small></div>
+    <div><b>Ética e responsabilidade</b><small>Respeito aos limites e às necessidades de cada cliente.</small></div>
+    <div><b>Comprometimento</b><small>Acompanhar a evolução com seriedade.</small></div>
+    <div><b>Consistência</b><small>Valorizar a disciplina e a continuidade.</small></div>
+    <div><b>Excelência</b><small>Buscar qualidade em cada atendimento.</small></div>
+    <div><b>Humanização</b><small>Cada aluno é uma pessoa, não apenas um resultado.</small></div>
+  </div>
+</div></section>
+
+<!-- SERVIÇOS -->
+<section class="alt" id="servicos"><div class="wrap">
+  <span class="eyebrow">Serviços</span>
+  <h2>Como posso <span>te ajudar</span></h2>
+  <div class="svc">
+    <div class="row">
+      <div class="media"><img src="fotos/servico-performance.jpg" alt="Treino de preparação física para corrida"></div>
+      <div>
+        <span class="num">01</span>
+        <h3>Alta performance <span>esportiva</span></h3>
+        <p>Para atletas e praticantes de futebol, futsal, corrida e outras modalidades que desejam desenvolver suas capacidades físicas.</p>
+        <ul class="ticks"><li>Força e potência muscular</li><li>Velocidade e aceleração</li><li>Resistência física</li><li>Agilidade e mudanças de direção</li><li>Mobilidade, estabilidade e fortalecimento</li><li>Preparação física individualizada para as demandas do esporte</li></ul>
+      </div>
+    </div>
+    <div class="row rev">
+      <div class="media"><img src="fotos/servico-saude.jpg" alt="Treino de condicionamento"></div>
+      <div>
+        <span class="num">02</span>
+        <h3>Saúde e <span>qualidade de vida</span></h3>
+        <p>Para quem deseja melhorar o condicionamento físico, desenvolver força e manter a independência funcional.</p>
+        <ul class="ticks"><li>Fortalecimento muscular</li><li>Equilíbrio e mobilidade</li><li>Melhora do condicionamento físico</li><li>Treino adaptado à idade e à condição física</li><li>Hábitos ativos e autonomia</li></ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="media"><img src="fotos/servico-forca.jpg" alt="Treino de força"></div>
+      <div>
+        <span class="num">03</span>
+        <h3>Emagrecimento <span>e hipertrofia</span></h3>
+        <p>Para pessoas que buscam transformar a composição corporal com planejamento e consistência.</p>
+        <ul class="ticks"><li>Treinamento para hipertrofia muscular</li><li>Desenvolvimento da força</li><li>Programa para emagrecimento saudável</li><li>Planejamento adaptado à rotina</li><li>Acompanhamento da evolução física</li></ul>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- MÉTODO -->
+<section id="metodo"><div class="wrap">
+  <span class="eyebrow">Meu método</span>
+  <h2>5 etapas, <span>do início à evolução</span></h2>
+  <div class="steps">
+    <div class="step"><b>Avaliação inicial</b><p>Conhecer histórico, rotina, nível de condicionamento e objetivos.</p></div>
+    <div class="step"><b>Definição de objetivos</b><p>Prioridades e metas realistas para as suas necessidades.</p></div>
+    <div class="step"><b>Planejamento individualizado</b><p>Treino que considera sua condição física, disponibilidade e objetivo.</p></div>
+    <div class="step"><b>Acompanhamento</b><p>Monitorar adaptação e evolução ao longo do processo.</p></div>
+    <div class="step"><b>Reavaliação e ajustes</b><p>Analisar resultados e atualizar o plano sempre que necessário.</p></div>
+  </div>
+</div></section>
+
+<!-- RESULTADOS -->
+<section class="alt" id="resultados"><div class="wrap">
+  <span class="eyebrow">Resultados e histórias</span>
+  <h2>Histórias <span>de alunos</span></h2>
+  <p class="lead">Cada resultado tem um contexto: objetivo inicial, tempo de acompanhamento e o que foi desenvolvido.</p>
+  <div class="grid3">
+    <div class="res"><img src="fotos/resultado-3.png" alt="Antes e depois de aluno"><div class="ctx"><b>7 semanas · −7 kg</b>Objetivo: emagrecimento. Treino + alimentação, o básico bem feito.</div></div>
+    <div class="res"><img src="fotos/resultado-1.png" alt="Antes e depois de aluno"><div class="ctx"><b>2 meses</b>Acompanhamento com treino individualizado.</div></div>
+    <div class="res"><img src="fotos/resultado-2.png" alt="Antes e depois"><div class="ctx"><b>1 mês</b>Acompanhamento com treino individualizado.</div></div>
+  </div>
+  <div class="testis">
+    <a class="testi video" href="https://www.instagram.com/jr.treinadorr/" target="_blank" rel="noopener"><img src="fotos/jr-treino-potencia.jpg" alt="Treino de potência"><span>▶ Veja os treinos no Instagram</span></a>
+  </div>
+  <p class="note">Fotos publicadas com autorização dos alunos. Resultados individuais variam de pessoa para pessoa.</p>
+</div></section>
+
+<!-- CONSULTORIA ONLINE -->
+<section id="consultoria"><div class="wrap">
+  <span class="eyebrow">Consultoria online</span>
+  <h2>Treine comigo <span>de qualquer lugar do mundo</span></h2>
+  <p class="lead">Para quem busca mais performance no esporte, menos risco de lesões, mais saúde e qualidade de vida, emagrecer ou ganhar massa muscular de forma saudável.</p>
+  <div class="how">
+    <div class="card"><div class="ico">📋</div><b>Avaliação inicial</b><small>Anamnese, avaliação do movimento por vídeo (possíveis disfunções articulares) e avaliação de assimetria de força entre as pernas.</small></div>
+    <div class="card"><div class="ico">📱</div><b>Treino no app Mfit</b><small>Vídeo de todos os exercícios, ordem, séries, repetições e tempo de descanso.</small></div>
+    <div class="card"><div class="ico">💬</div><b>Suporte 7 dias</b><small>Suporte 7 dias por semana pelo WhatsApp, direto comigo.</small></div>
+    <div class="card"><div class="ico">🔄</div><b>Atualização mensal</b><small>O treino é atualizado 1 vez por mês, de acordo com a sua evolução.</small></div>
+  </div>
+
+  <div class="plans" id="planos">
+    <div class="plan"><h3>Básico</h3><span class="per">1 mês</span>
+      <div class="price"><small>R$</small>180</div><div class="month">pagamento único</div>
+      <ul><li>Avaliação inicial completa</li><li>Treino no app Mfit</li><li>Suporte 7 dias no WhatsApp</li></ul>
+      <a class="btn ghost plan-btn" data-plano="Básico (1 mês)" href="#">Quero o Básico</a></div>
+    <div class="plan top"><span class="flag">Recomendado</span><h3>Premium</h3><span class="per">3 meses</span>
+      <div class="price"><small>R$</small>350</div><div class="month">≈ R$ 117 por mês</div>
+      <ul><li>Tudo do Básico</li><li>3 atualizações de treino</li><li>Reavaliação e ajustes</li></ul>
+      <a class="btn plan-btn" data-plano="Premium (3 meses)" href="#">Quero o Premium</a></div>
+    <div class="plan"><h3>Elite</h3><span class="per">6 meses</span>
+      <div class="price"><small>R$</small>550</div><div class="month">≈ R$ 92 por mês</div>
+      <ul><li>Tudo do Premium</li><li>6 atualizações de treino</li><li>Melhor custo por mês</li></ul>
+      <a class="btn ghost plan-btn" data-plano="Elite (6 meses)" href="#">Quero o Elite</a></div>
+  </div>
+  <p class="note" style="text-align:center">Pix ou cartão de crédito, à vista ou parcelado.</p>
+
+  <div class="hire">
+    <div><i>1</i>Chame no WhatsApp e escolha a forma de pagamento.</div>
+    <div><i>2</i>Após o pagamento, receba as orientações de anamnese e avaliações.</div>
+    <div><i>3</i>Seu treino começa a ser montado. Bora pro choque ⚡</div>
+  </div>
+  <div style="text-align:center;margin-top:40px"><a class="btn wa" data-msg="Oi JR! Vim pelo site e quero começar minha consultoria online ⚡" href="#">Quero começar minha consultoria</a></div>
+</div></section>
+
+<!-- PRESENCIAL -->
+<section class="alt" id="presencial"><div class="wrap">
+  <span class="eyebrow">Atendimento presencial · São Paulo – SP</span>
+  <h2>Presencial <span>e terapias manuais</span></h2>
+  <p class="lead">Cada sessão é individualizada de acordo com o seu objetivo, e a duração depende da sua necessidade.</p>
+  <div class="inperson">
+    <div class="card"><div class="ico">🏋️</div><b>Treinamento presencial</b><small>Treino individual, acompanhado de perto.</small></div>
+    <div class="card"><div class="ico">🦴</div><b>Quiropraxia</b><small>Técnica Yawara Sentai.</small></div>
+    <div class="card"><div class="ico">🫙</div><b>Ventosaterapia</b><small>Terapia manual complementar ao treino.</small></div>
+  </div>
+  <div class="info">
+    <span>📍 <b>São Paulo – SP</b></span>
+    <span>💰 Valores e pacotes: <b>via WhatsApp</b></span>
+    <span>📅 Agenda e disponibilidade: <b>via WhatsApp</b></span>
+    <span>⚠️ Contraindicações e avaliação: <b>via WhatsApp</b></span>
+  </div>
+  <a class="btn wa" data-msg="Oi JR! Vim pelo site e quero agendar um atendimento presencial ⚡" href="#">Agendar atendimento presencial</a>
+</div></section>
+
+<!-- FAQ -->
+<section class="faq" id="faq"><div class="wrap">
+  <span class="eyebrow">Dúvidas</span>
+  <h2>Perguntas <span>frequentes</span></h2>
+  <details><summary>Preciso já treinar para contratar a consultoria?</summary><p>Não. O treino se adapta ao seu nível — do iniciante ao avançado, cada treino é individualizado.</p></details>
+  <details><summary>O treinamento é adaptado para iniciantes?</summary><p>Sim.</p></details>
+  <details><summary>Posso contratar mesmo morando em outra cidade?</summary><p>Sim, a consultoria online atende qualquer lugar do mundo.</p></details>
+  <details><summary>Como funciona a avaliação inicial?</summary><p>Formulário de anamnese, avaliação do movimento por vídeo (para identificar possíveis disfunções articulares) e avaliação de assimetria de força (para ver se existe diferença de força entre as pernas).</p></details>
+  <details><summary>Como são feitas as atualizações do treino?</summary><p>Dentro do aplicativo Mfit, de acordo com a evolução de cada aluno.</p></details>
+  <details><summary>O treinamento é indicado para quem busca emagrecimento?</summary><p>Sim. O treino ajuda a acelerar o metabolismo e o gasto de calorias.</p></details>
+  <details><summary>A preparação física serve para atletas amadores?</summary><p>Sim — atletas amadores e também profissionais.</p></details>
+  <details><summary>Como faço para contratar?</summary><p>Clique em “Fale comigo” e me chame no WhatsApp.</p></details>
+  <details><summary>Quais são as formas de pagamento?</summary><p>Pix e cartão de crédito, à vista ou parcelado.</p></details>
+</div></section>
+
+<!-- CONTATO -->
+<section class="alt" id="contato"><div class="wrap">
+  <span class="eyebrow">Contato e agendamento</span>
+  <h2>Fale <span>comigo</span></h2>
+  <div class="contact">
+    <div class="links">
+      <a class="wa" data-msg="Oi JR! Vim pelo site e quero saber mais ⚡" href="#"><i>💬</i><span><b>WhatsApp</b><small>Resposta direta comigo</small></span></a>
+      <a href="https://www.instagram.com/jr.treinadorr/" target="_blank" rel="noopener"><i>📸</i><span><b>@jr.treinadorr</b><small>Instagram profissional</small></span></a>
+      <a href="mailto:andre_jrr@icloud.com"><i>✉️</i><span><b>andre_jrr@icloud.com</b><small>E-mail profissional</small></span></a>
+    </div>
+    <form id="form">
+      <div class="two">
+        <label>Seu nome<input name="nome" required placeholder="Como posso te chamar?"></label>
+        <label>Cidade<input name="cidade" placeholder="Ex.: São Paulo"></label>
+      </div>
+      <label>Quero saber sobre
+        <select name="assunto">
+          <option>Consultoria online</option>
+          <option>Treinamento presencial</option>
+          <option>Quiropraxia</option>
+          <option>Ventosaterapia</option>
+          <option>Solicitar uma avaliação</option>
+        </select>
+      </label>
+      <label>Seu objetivo
+        <select name="objetivo">
+          <option>Alta performance esportiva</option>
+          <option>Saúde e qualidade de vida</option>
+          <option>Emagrecimento</option>
+          <option>Hipertrofia</option>
+          <option>Voltar a treinar após lesão</option>
+        </select>
+      </label>
+      <label>Mensagem (opcional)<textarea name="msg" placeholder="Conte um pouco da sua rotina, esporte ou histórico"></textarea></label>
+      <button class="btn" type="submit">Enviar pelo WhatsApp ⚡</button>
+    </form>
+  </div>
+</div></section>
+
+<footer><div class="wrap"><span>© 2026 JR Alta Performance · André Junior · São Paulo – SP</span><a href="https://www.instagram.com/jr.treinadorr/">@jr.treinadorr</a></div></footer>
+<a class="wpp wa" data-msg="Oi JR! Vim pelo site e quero saber mais ⚡" href="#" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3a.4.4 0 0 0 0-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.2-.2-.2-.4-.3Z"/></svg></a>
+
+<script>
+  // Número do WhatsApp do JR (só dígitos, com 55 + DDD)
+  const WHATSAPP = "5511950418384";
+  const wa = text => "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(text);
+
+  document.querySelectorAll(".wa").forEach(a => { a.href = wa(a.dataset.msg); a.target = "_blank"; a.rel = "noopener"; });
+  document.querySelectorAll(".plan-btn").forEach(a => {
+    a.href = wa("Oi JR! Vim pelo site e quero contratar a consultoria online, plano " + a.dataset.plano + " ⚡");
+    a.target = "_blank"; a.rel = "noopener";
+  });
+  document.getElementById("form").addEventListener("submit", e => {
+    e.preventDefault();
+    const f = new FormData(e.target);
+    const linhas = [
+      "Oi JR! Vim pelo site ⚡",
+      "Nome: " + f.get("nome"),
+      f.get("cidade") ? "Cidade: " + f.get("cidade") : "",
+      "Quero saber sobre: " + f.get("assunto"),
+      "Objetivo: " + f.get("objetivo"),
+      f.get("msg") ? "Mensagem: " + f.get("msg") : ""
+    ].filter(Boolean);
+    window.open(wa(linhas.join("\n")), "_blank", "noopener");
+  });
+</script>
+</body>
+</html>
