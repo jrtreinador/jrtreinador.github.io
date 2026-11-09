@@ -6,18 +6,40 @@
   },
   "topo": {
     "texto": "Treinamento individualizado para alta performance esportiva, saúde e qualidade de vida, emagrecimento e hipertrofia. Presencial em São Paulo e consultoria online para o mundo inteiro.",
-    "foto": "/fotos/jr-kettlebell-hd.jpg"
+    "foto": "/fotos/jr-kettlebell-hd.jpg",
+    "selo": "🎓 **Educação Física** + especialista em Alta Performance"
   },
   "fotos_quem_sou_eu": {
-    "formacao": "/fotos/jr-athletic-lab-corpo.jpg",
-    "de_onde_eu_vim": "/fotos/jr-futebol-chute.jpg",
-    "lesao": "/fotos/jr-futsal-sao-caetano-11.jpg",
-    "endurance": "/fotos/jr-corrida-praia.jpg"
+    "formacao": {
+      "foto": "/fotos/jr-athletic-lab-corpo.jpg",
+      "inteira": false
+    },
+    "de_onde_eu_vim": {
+      "foto": "/fotos/jr-futebol-chute.jpg",
+      "inteira": false
+    },
+    "lesao": {
+      "foto": "/fotos/jr-futsal-sao-caetano-11.jpg",
+      "inteira": true
+    },
+    "endurance": {
+      "foto": "/fotos/jr-corrida-praia.jpg",
+      "inteira": false
+    }
   },
   "fotos_servicos": {
-    "alta_performance": "/fotos/servico-performance-agachamento.jpg",
-    "saude": "/fotos/servico-saude-supino.jpg",
-    "emagrecimento": "/fotos/servico-forca-barra.jpg"
+    "alta_performance": {
+      "foto": "/fotos/servico-performance-agachamento.jpg",
+      "inteira": true
+    },
+    "saude": {
+      "foto": "/fotos/servico-saude-supino.jpg",
+      "inteira": true
+    },
+    "emagrecimento": {
+      "foto": "/fotos/servico-forca-barra.jpg",
+      "inteira": true
+    }
   },
   "depoimentos": [
     {
@@ -118,5 +140,206 @@
       "pergunta": "Quais são as formas de pagamento?",
       "resposta": "Pix e cartão de crédito, à vista ou parcelado."
     }
-  ]
+  ],
+  "numeros": [
+    {
+      "valor": "+100",
+      "texto": "alunos com resultados"
+    },
+    {
+      "valor": "7 dias",
+      "texto": "de suporte por semana"
+    },
+    {
+      "valor": "SP",
+      "texto": "atendimento presencial"
+    },
+    {
+      "valor": "🌎",
+      "texto": "consultoria online no mundo todo"
+    }
+  ],
+  "quem_sou_eu": {
+    "formacao": "Formado em **Administração** e **Educação Física (Bacharelado)**, especialista em **Treinamento Funcional** e **Alta Performance Esportiva**.",
+    "certificados": [
+      "Athletic Lab",
+      "CVTF 1",
+      "CVTF 2",
+      "Quiropraxia",
+      "Ventosaterapia"
+    ],
+    "de_onde_eu_vim": "Sou ex-atleta da categoria de base no futebol de campo e federado no futsal, com passagem por:",
+    "clubes": [
+      "Milan Junior Camp",
+      "Red Bull",
+      "Corinthians",
+      "São Caetano",
+      "Clube Esportivo da Penha",
+      "Elite Itaquerense"
+    ],
+    "lesao": [
+      "Não segui como profissional porque, no último ano de sub-20, rompi o LCA e o menisco do joelho.",
+      "Fiz cirurgia, reabilitação e voltei ao esporte sem dores e sem limitações. Essa experiência me levou a trabalhar com preparação física — para ajudar atletas a se fortalecer e reduzir o risco de lesões dentro do esporte."
+    ],
+    "endurance": [
+      "Pratico natação, ciclismo e corrida. Faço travessias em águas abertas (mar e represa) e provas de ciclismo e corrida de longa distância — vivendo na prática o que ensino.",
+      "Tenho experiência com atletas profissionais, de categoria de base e amadores."
+    ],
+    "esportes": [
+      "🏊 Natação",
+      "🚴 Ciclismo",
+      "🏃 Corrida",
+      "🌊 Águas abertas"
+    ]
+  },
+  "frase": "Cada pessoa tem uma história, uma rotina e um objetivo. O treinamento deve ser **individualizado** — não copiado de outra pessoa.",
+  "crencas": [
+    "A evolução depende de planejamento, consistência e acompanhamento.",
+    "O exercício físico contribui tanto para o desempenho esportivo quanto para a saúde e a qualidade de vida.",
+    "O objetivo é desenvolver capacidades físicas de forma adequada às necessidades de cada aluno.",
+    "Avaliação inicial, treino guiado por princípios científicos e experiência prática, e ajustes conforme o serviço contratado."
+  ],
+  "missao": "Promover saúde, qualidade de vida, desenvolvimento físico e desempenho esportivo por meio de treinamentos individualizados e estratégias adequadas aos objetivos, às necessidades e à realidade de cada pessoa.",
+  "visao": "Ser referência em treinamento personalizado e preparação física, reconhecido pela qualidade do atendimento, pela busca constante de conhecimento e pelo compromisso com a evolução dos alunos e atletas.",
+  "valores": [
+    {
+      "nome": "Individualidade",
+      "descricao": "Cada pessoa possui necessidades e objetivos próprios."
+    },
+    {
+      "nome": "Ciência e atualização",
+      "descricao": "Buscar conhecimento para aprimorar as estratégias de treino."
+    },
+    {
+      "nome": "Ética e responsabilidade",
+      "descricao": "Respeito aos limites e às necessidades de cada cliente."
+    },
+    {
+      "nome": "Comprometimento",
+      "descricao": "Acompanhar a evolução com seriedade."
+    },
+    {
+      "nome": "Consistência",
+      "descricao": "Valorizar a disciplina e a continuidade."
+    },
+    {
+      "nome": "Excelência",
+      "descricao": "Buscar qualidade em cada atendimento."
+    },
+    {
+      "nome": "Humanização",
+      "descricao": "Cada aluno é uma pessoa, não apenas um resultado."
+    }
+  ],
+  "servicos": {
+    "alta_performance": {
+      "descricao": "Para atletas e praticantes de futebol, futsal, corrida e outras modalidades que desejam desenvolver suas capacidades físicas.",
+      "itens": [
+        "Força e potência muscular",
+        "Velocidade e aceleração",
+        "Resistência física",
+        "Agilidade e mudanças de direção",
+        "Mobilidade, estabilidade e fortalecimento",
+        "Preparação física individualizada para as demandas do esporte"
+      ]
+    },
+    "saude": {
+      "descricao": "Para quem deseja melhorar o condicionamento físico, desenvolver força e manter a independência funcional.",
+      "itens": [
+        "Fortalecimento muscular",
+        "Equilíbrio e mobilidade",
+        "Melhora do condicionamento físico",
+        "Treino adaptado à idade e à condição física",
+        "Hábitos ativos e autonomia"
+      ]
+    },
+    "emagrecimento": {
+      "descricao": "Para pessoas que buscam transformar a composição corporal com planejamento e consistência.",
+      "itens": [
+        "Treinamento para hipertrofia muscular",
+        "Desenvolvimento da força",
+        "Programa para emagrecimento saudável",
+        "Planejamento adaptado à rotina",
+        "Acompanhamento da evolução física"
+      ]
+    }
+  },
+  "metodo": [
+    {
+      "titulo": "Avaliação inicial",
+      "texto": "Conhecer histórico, rotina, nível de condicionamento e objetivos."
+    },
+    {
+      "titulo": "Definição de objetivos",
+      "texto": "Prioridades e metas realistas para as suas necessidades."
+    },
+    {
+      "titulo": "Planejamento individualizado",
+      "texto": "Treino que considera sua condição física, disponibilidade e objetivo."
+    },
+    {
+      "titulo": "Acompanhamento",
+      "texto": "Monitorar adaptação e evolução ao longo do processo."
+    },
+    {
+      "titulo": "Reavaliação e ajustes",
+      "texto": "Analisar resultados e atualizar o plano sempre que necessário."
+    }
+  ],
+  "consultoria": {
+    "para_quem": "Para quem busca mais performance no esporte, menos risco de lesões, mais saúde e qualidade de vida, emagrecer ou ganhar massa muscular de forma saudável.",
+    "como_funciona": [
+      {
+        "icone": "📋",
+        "titulo": "Avaliação inicial",
+        "texto": "Anamnese, avaliação do movimento por vídeo (possíveis disfunções articulares) e avaliação de assimetria de força entre as pernas."
+      },
+      {
+        "icone": "📱",
+        "titulo": "Treino no app Mfit",
+        "texto": "Vídeo de todos os exercícios, ordem, séries, repetições e tempo de descanso."
+      },
+      {
+        "icone": "💬",
+        "titulo": "Suporte 7 dias",
+        "texto": "Suporte 7 dias por semana pelo WhatsApp, direto comigo."
+      },
+      {
+        "icone": "🔄",
+        "titulo": "Atualização mensal",
+        "texto": "O treino é atualizado 1 vez por mês, de acordo com a sua evolução."
+      }
+    ],
+    "passos": [
+      "Chame no WhatsApp e escolha a forma de pagamento.",
+      "Após o pagamento, receba as orientações de anamnese e avaliações.",
+      "Seu treino começa a ser montado. Bora pro choque ⚡"
+    ]
+  },
+  "presencial": {
+    "texto": "Cada sessão é individualizada de acordo com o seu objetivo, e a duração depende da sua necessidade.",
+    "atendimentos": [
+      {
+        "icone": "🏋️",
+        "titulo": "Treinamento presencial",
+        "texto": "Treino individual, acompanhado de perto."
+      },
+      {
+        "icone": "🦴",
+        "titulo": "Quiropraxia",
+        "texto": "Técnica Yawara Sentai."
+      },
+      {
+        "icone": "🫙",
+        "titulo": "Ventosaterapia",
+        "texto": "Terapia manual complementar ao treino."
+      }
+    ],
+    "informacoes": [
+      "📍 **São Paulo – SP**",
+      "💰 Valores e pacotes: **via WhatsApp**",
+      "📅 Agenda e disponibilidade: **via WhatsApp**",
+      "⚠️ Contraindicações e avaliação: **via WhatsApp**"
+    ]
+  }
 }

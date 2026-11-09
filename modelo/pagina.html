@@ -1,3 +1,7 @@
+{#- Foto de seção: "inteira" mostra a foto sem cortes; senão usa o formato padrão do lugar. -#}
+{%- macro foto(f, alt, classe="", posicao="") -%}
+<div class="media{% if f.inteira %} full{% elif classe %} {{ classe }}{% endif %}"><img src="{{ f.foto|src }}" alt="{{ alt }}"{% if posicao and not f.inteira %} style="object-position:{{ posicao }}"{% endif %}></div>
+{%- endmacro -%}
 <!doctype html>
 <html lang="pt-BR">
 <head>
@@ -224,14 +228,13 @@
   </div>
   <div class="hero-photo">
     <img src="{{ topo.foto|src }}" alt="André Junior segurando um kettlebell">
-    <div class="badge">🎓 <b>Educação Física</b> + especialista em Alta Performance</div>
+    <div class="badge">{{ topo.selo|negrito }}</div>
   </div>
 </div>
 <div class="wrap"><div class="nums">
-  <div><strong>+100</strong><span>alunos com resultados</span></div>
-  <div><strong>7 dias</strong><span>de suporte por semana</span></div>
-  <div><strong>SP</strong><span>atendimento presencial</span></div>
-  <div><strong>🌎</strong><span>consultoria online no mundo todo</span></div>
+{%- for n in numeros %}
+  <div><strong>{{ n.valor }}</strong><span>{{ n.texto }}</span></div>
+{%- endfor %}
 </div></div>
 </header>
 
@@ -241,48 +244,49 @@
   <h2>André Junior — <span>treinador e administrador</span></h2>
   <div class="story">
     <div class="row">
-      <div class="media tall"><img src="{{ fotos_quem_sou_eu.formacao|src }}" alt="André Junior na Athletic Lab Coaching Academy" style="object-position:50% 0"></div>
+      {{ foto(fotos_quem_sou_eu.formacao, "André Junior na Athletic Lab Coaching Academy", "tall", "50% 0") }}
       <div>
         <h3>Formação</h3>
-        <p>Formado em <b>Administração</b> e <b>Educação Física (Bacharelado)</b>, especialista em <b>Treinamento Funcional</b> e <b>Alta Performance Esportiva</b>.</p>
-        <div class="chips neon"><span>Athletic Lab</span><span>CVTF 1</span><span>CVTF 2</span><span>Quiropraxia</span><span>Ventosaterapia</span></div>
+        <p>{{ quem_sou_eu.formacao|negrito }}</p>
+        <div class="chips neon">{% for t in quem_sou_eu.certificados %}<span>{{ t }}</span>{% endfor %}</div>
       </div>
     </div>
     <div class="row rev">
-      <div class="media tall"><img src="{{ fotos_quem_sou_eu.de_onde_eu_vim|src }}" alt="André Junior chutando a bola em jogo de futebol"></div>
+      {{ foto(fotos_quem_sou_eu.de_onde_eu_vim, "André Junior chutando a bola em jogo de futebol", "tall") }}
       <div>
         <h3>De onde eu vim</h3>
-        <p>Sou ex-atleta da categoria de base no futebol de campo e federado no futsal, com passagem por:</p>
-        <div class="chips"><span>Milan Junior Camp</span><span>Red Bull</span><span>Corinthians</span><span>São Caetano</span><span>Clube Esportivo da Penha</span><span>Elite Itaquerense</span></div>
+        <p>{{ quem_sou_eu.de_onde_eu_vim|negrito }}</p>
+        <div class="chips">{% for t in quem_sou_eu.clubes %}<span>{{ t }}</span>{% endfor %}</div>
       </div>
     </div>
     <div class="row">
-      <div class="media full"><img src="{{ fotos_quem_sou_eu.lesao|src }}" alt="André Junior jogando futsal pelo São Caetano"></div>
+      {{ foto(fotos_quem_sou_eu.lesao, "André Junior jogando futsal pelo São Caetano", "tall") }}
       <div>
         <h3>A lesão que <span>mudou meu caminho</span></h3>
-        <p>Não segui como profissional porque, no último ano de sub-20, rompi o LCA e o menisco do joelho.</p>
-        <p>Fiz cirurgia, reabilitação e voltei ao esporte sem dores e sem limitações. Essa experiência me levou a trabalhar com preparação física — para ajudar atletas a se fortalecer e reduzir o risco de lesões dentro do esporte.</p>
+{%- for t in quem_sou_eu.lesao %}
+        <p>{{ t|negrito }}</p>
+{%- endfor %}
       </div>
     </div>
     <div class="row rev">
-      <div class="media tall"><img src="{{ fotos_quem_sou_eu.endurance|src }}" alt="André Junior correndo em prova na praia" style="object-position:50% 40%"></div>
+      {{ foto(fotos_quem_sou_eu.endurance, "André Junior correndo em prova na praia", "tall", "50% 40%") }}
       <div>
         <h3>Hoje: <span>atleta de endurance</span></h3>
-        <p>Pratico natação, ciclismo e corrida. Faço travessias em águas abertas (mar e represa) e provas de ciclismo e corrida de longa distância — vivendo na prática o que ensino.</p>
-        <p>Tenho experiência com atletas profissionais, de categoria de base e amadores.</p>
-        <div class="chips"><span>🏊 Natação</span><span>🚴 Ciclismo</span><span>🏃 Corrida</span><span>🌊 Águas abertas</span></div>
+{%- for t in quem_sou_eu.endurance %}
+        <p>{{ t|negrito }}</p>
+{%- endfor %}
+        <div class="chips">{% for t in quem_sou_eu.esportes %}<span>{{ t }}</span>{% endfor %}</div>
       </div>
     </div>
   </div>
 </div></section>
 
 <section class="alt"><div class="wrap">
-  <p class="quote">Cada pessoa tem uma história, uma rotina e um objetivo. O treinamento deve ser <span>individualizado</span> — não copiado de outra pessoa.</p>
+  <p class="quote">{{ frase|destaque }}</p>
   <div class="beliefs">
-    <div>A evolução depende de planejamento, consistência e acompanhamento.</div>
-    <div>O exercício físico contribui tanto para o desempenho esportivo quanto para a saúde e a qualidade de vida.</div>
-    <div>O objetivo é desenvolver capacidades físicas de forma adequada às necessidades de cada aluno.</div>
-    <div>Avaliação inicial, treino guiado por princípios científicos e experiência prática, e ajustes conforme o serviço contratado.</div>
+{%- for t in crencas %}
+    <div>{{ t }}</div>
+{%- endfor %}
   </div>
 </div></section>
 
@@ -291,18 +295,14 @@
   <span class="eyebrow">No que eu acredito</span>
   <h2>Missão, visão <span>e valores</span></h2>
   <div class="mv">
-    <div><h3>Missão</h3><p>Promover saúde, qualidade de vida, desenvolvimento físico e desempenho esportivo por meio de treinamentos individualizados e estratégias adequadas aos objetivos, às necessidades e à realidade de cada pessoa.</p></div>
-    <div><h3>Visão</h3><p>Ser referência em treinamento personalizado e preparação física, reconhecido pela qualidade do atendimento, pela busca constante de conhecimento e pelo compromisso com a evolução dos alunos e atletas.</p></div>
+    <div><h3>Missão</h3><p>{{ missao }}</p></div>
+    <div><h3>Visão</h3><p>{{ visao }}</p></div>
   </div>
   <h3 class="values-title">Valores</h3>
   <div class="values">
-    <div><b>Individualidade</b><small>Cada pessoa possui necessidades e objetivos próprios.</small></div>
-    <div><b>Ciência e atualização</b><small>Buscar conhecimento para aprimorar as estratégias de treino.</small></div>
-    <div><b>Ética e responsabilidade</b><small>Respeito aos limites e às necessidades de cada cliente.</small></div>
-    <div><b>Comprometimento</b><small>Acompanhar a evolução com seriedade.</small></div>
-    <div><b>Consistência</b><small>Valorizar a disciplina e a continuidade.</small></div>
-    <div><b>Excelência</b><small>Buscar qualidade em cada atendimento.</small></div>
-    <div><b>Humanização</b><small>Cada aluno é uma pessoa, não apenas um resultado.</small></div>
+{%- for v in valores %}
+    <div><b>{{ v.nome }}</b><small>{{ v.descricao }}</small></div>
+{%- endfor %}
   </div>
 </div></section>
 
@@ -312,30 +312,30 @@
   <h2>Como posso <span>te ajudar</span></h2>
   <div class="svc">
     <div class="row">
-      <div class="media full"><img src="{{ fotos_servicos.alta_performance|src }}" alt="Treino de força com halteres"></div>
+      {{ foto(fotos_servicos.alta_performance, "Treino de força com halteres") }}
       <div>
         <span class="num">01</span>
         <h3>Alta performance <span>esportiva</span></h3>
-        <p>Para atletas e praticantes de futebol, futsal, corrida e outras modalidades que desejam desenvolver suas capacidades físicas.</p>
-        <ul class="ticks"><li>Força e potência muscular</li><li>Velocidade e aceleração</li><li>Resistência física</li><li>Agilidade e mudanças de direção</li><li>Mobilidade, estabilidade e fortalecimento</li><li>Preparação física individualizada para as demandas do esporte</li></ul>
+        <p>{{ servicos.alta_performance.descricao|negrito }}</p>
+        <ul class="ticks">{% for i in servicos.alta_performance.itens %}<li>{{ i }}</li>{% endfor %}</ul>
       </div>
     </div>
     <div class="row rev">
-      <div class="media full"><img src="{{ fotos_servicos.saude|src }}" alt="Aluno fazendo supino com barra"></div>
+      {{ foto(fotos_servicos.saude, "Aluno fazendo supino com barra") }}
       <div>
         <span class="num">02</span>
         <h3>Saúde e <span>qualidade de vida</span></h3>
-        <p>Para quem deseja melhorar o condicionamento físico, desenvolver força e manter a independência funcional.</p>
-        <ul class="ticks"><li>Fortalecimento muscular</li><li>Equilíbrio e mobilidade</li><li>Melhora do condicionamento físico</li><li>Treino adaptado à idade e à condição física</li><li>Hábitos ativos e autonomia</li></ul>
+        <p>{{ servicos.saude.descricao|negrito }}</p>
+        <ul class="ticks">{% for i in servicos.saude.itens %}<li>{{ i }}</li>{% endfor %}</ul>
       </div>
     </div>
     <div class="row">
-      <div class="media full"><img src="{{ fotos_servicos.emagrecimento|src }}" alt="Treino de força na barra"></div>
+      {{ foto(fotos_servicos.emagrecimento, "Treino de força na barra") }}
       <div>
         <span class="num">03</span>
         <h3>Emagrecimento <span>e hipertrofia</span></h3>
-        <p>Para pessoas que buscam transformar a composição corporal com planejamento e consistência.</p>
-        <ul class="ticks"><li>Treinamento para hipertrofia muscular</li><li>Desenvolvimento da força</li><li>Programa para emagrecimento saudável</li><li>Planejamento adaptado à rotina</li><li>Acompanhamento da evolução física</li></ul>
+        <p>{{ servicos.emagrecimento.descricao|negrito }}</p>
+        <ul class="ticks">{% for i in servicos.emagrecimento.itens %}<li>{{ i }}</li>{% endfor %}</ul>
       </div>
     </div>
   </div>
@@ -346,11 +346,9 @@
   <span class="eyebrow">Meu método</span>
   <h2>5 etapas, <span>do início à evolução</span></h2>
   <div class="steps">
-    <div class="step"><b>Avaliação inicial</b><p>Conhecer histórico, rotina, nível de condicionamento e objetivos.</p></div>
-    <div class="step"><b>Definição de objetivos</b><p>Prioridades e metas realistas para as suas necessidades.</p></div>
-    <div class="step"><b>Planejamento individualizado</b><p>Treino que considera sua condição física, disponibilidade e objetivo.</p></div>
-    <div class="step"><b>Acompanhamento</b><p>Monitorar adaptação e evolução ao longo do processo.</p></div>
-    <div class="step"><b>Reavaliação e ajustes</b><p>Analisar resultados e atualizar o plano sempre que necessário.</p></div>
+{%- for e in metodo %}
+    <div class="step"><b>{{ e.titulo }}</b><p>{{ e.texto }}</p></div>
+{%- endfor %}
   </div>
 </div></section>
 
@@ -377,12 +375,11 @@
 <section id="consultoria"><div class="wrap">
   <span class="eyebrow">Consultoria online</span>
   <h2>Treine comigo <span>de qualquer lugar do mundo</span></h2>
-  <p class="lead">Para quem busca mais performance no esporte, menos risco de lesões, mais saúde e qualidade de vida, emagrecer ou ganhar massa muscular de forma saudável.</p>
+  <p class="lead">{{ consultoria.para_quem }}</p>
   <div class="how">
-    <div class="card"><div class="ico">📋</div><b>Avaliação inicial</b><small>Anamnese, avaliação do movimento por vídeo (possíveis disfunções articulares) e avaliação de assimetria de força entre as pernas.</small></div>
-    <div class="card"><div class="ico">📱</div><b>Treino no app Mfit</b><small>Vídeo de todos os exercícios, ordem, séries, repetições e tempo de descanso.</small></div>
-    <div class="card"><div class="ico">💬</div><b>Suporte 7 dias</b><small>Suporte 7 dias por semana pelo WhatsApp, direto comigo.</small></div>
-    <div class="card"><div class="ico">🔄</div><b>Atualização mensal</b><small>O treino é atualizado 1 vez por mês, de acordo com a sua evolução.</small></div>
+{%- for k in consultoria.como_funciona %}
+    <div class="card"><div class="ico">{{ k.icone }}</div><b>{{ k.titulo }}</b><small>{{ k.texto }}</small></div>
+{%- endfor %}
   </div>
 
   <div class="plans" id="planos">
@@ -396,9 +393,9 @@
   <p class="note" style="text-align:center">{{ observacao_pagamento }}</p>
 
   <div class="hire">
-    <div><i>1</i>Chame no WhatsApp e escolha a forma de pagamento.</div>
-    <div><i>2</i>Após o pagamento, receba as orientações de anamnese e avaliações.</div>
-    <div><i>3</i>Seu treino começa a ser montado. Bora pro choque ⚡</div>
+{%- for t in consultoria.passos %}
+    <div><i>{{ loop.index }}</i>{{ t }}</div>
+{%- endfor %}
   </div>
   <div style="text-align:center;margin-top:40px"><a class="btn wa" data-msg="Oi JR! Vim pelo site e quero começar minha consultoria online ⚡" href="#">Quero começar minha consultoria</a></div>
 </div></section>
@@ -407,17 +404,16 @@
 <section class="alt" id="presencial"><div class="wrap">
   <span class="eyebrow">Atendimento presencial · São Paulo – SP</span>
   <h2>Presencial <span>e terapias manuais</span></h2>
-  <p class="lead">Cada sessão é individualizada de acordo com o seu objetivo, e a duração depende da sua necessidade.</p>
+  <p class="lead">{{ presencial.texto }}</p>
   <div class="inperson">
-    <div class="card"><div class="ico">🏋️</div><b>Treinamento presencial</b><small>Treino individual, acompanhado de perto.</small></div>
-    <div class="card"><div class="ico">🦴</div><b>Quiropraxia</b><small>Técnica Yawara Sentai.</small></div>
-    <div class="card"><div class="ico">🫙</div><b>Ventosaterapia</b><small>Terapia manual complementar ao treino.</small></div>
+{%- for k in presencial.atendimentos %}
+    <div class="card"><div class="ico">{{ k.icone }}</div><b>{{ k.titulo }}</b><small>{{ k.texto }}</small></div>
+{%- endfor %}
   </div>
   <div class="info">
-    <span>📍 <b>São Paulo – SP</b></span>
-    <span>💰 Valores e pacotes: <b>via WhatsApp</b></span>
-    <span>📅 Agenda e disponibilidade: <b>via WhatsApp</b></span>
-    <span>⚠️ Contraindicações e avaliação: <b>via WhatsApp</b></span>
+{%- for t in presencial.informacoes %}
+    <span>{{ t|negrito }}</span>
+{%- endfor %}
   </div>
   <a class="btn wa" data-msg="Oi JR! Vim pelo site e quero agendar um atendimento presencial ⚡" href="#">Agendar atendimento presencial</a>
 </div></section>

@@ -1,147 +1,354 @@
 # Painel de edição (Pages CMS - app.pagescms.org)
+# Dica para os textos: escrever **palavra** deixa o trecho em destaque.
 media:
   input: fotos
   output: /fotos
-
 content:
-  - name: site
-    label: Conteúdo do site
-    type: file
-    path: conteudo/site.json
-    format: json
+- name: site
+  label: Conteúdo do site
+  type: file
+  path: conteudo/site.json
+  format: json
+  fields:
+  - name: contato
+    label: Contato
+    type: object
     fields:
-      - name: contato
-        label: Contato
-        type: object
-        fields:
-          - name: whatsapp
-            label: WhatsApp (com 55 e DDD, ex. 5511999998888)
-            type: string
-          - name: email
-            label: E-mail
-            type: string
-          - name: instagram
-            label: Instagram (sem @)
-            type: string
-
-      - name: topo
-        label: Topo do site
-        type: object
-        fields:
-          - name: texto
-            label: Texto de apresentação
-            type: text
-          - name: foto
-            label: Foto principal
-            type: image
-
-      - name: fotos_quem_sou_eu
-        label: Fotos de "Quem sou eu"
-        type: object
-        fields:
-          - name: formacao
-            label: Formação
-            type: image
-          - name: de_onde_eu_vim
-            label: De onde eu vim
-            type: image
-          - name: lesao
-            label: A lesão que mudou meu caminho
-            type: image
-          - name: endurance
-            label: Hoje - atleta de endurance
-            type: image
-
-      - name: fotos_servicos
-        label: Fotos dos serviços
-        type: object
-        fields:
-          - name: alta_performance
-            label: 01 - Alta performance esportiva
-            type: image
-          - name: saude
-            label: 02 - Saúde e qualidade de vida
-            type: image
-          - name: emagrecimento
-            label: 03 - Emagrecimento e hipertrofia
-            type: image
-
-      - name: depoimentos
-        label: Depoimentos
-        type: object
-        list: true
-        fields:
-          - name: foto
-            label: Foto
-            type: image
-          - name: descricao_foto
-            label: Descrição da foto (para acessibilidade)
-            type: string
-          - name: titulo
-            label: Título (ex. Atleta de futsal · volta ao jogo)
-            type: string
-          - name: texto
-            label: Depoimento
-            type: text
-          - name: nome
-            label: Nome do aluno
-            type: string
-
-      - name: resultados
-        label: Resultados (antes e depois)
-        type: object
-        list: true
-        fields:
-          - name: foto
-            label: Foto
-            type: image
-          - name: descricao_foto
-            label: Descrição da foto (para acessibilidade)
-            type: string
-          - name: titulo
-            label: Título (ex. 2 meses)
-            type: string
-          - name: texto
-            label: Texto
-            type: string
-
-      - name: planos
-        label: Planos da consultoria
-        type: object
-        list: true
-        fields:
-          - name: nome
-            label: Nome do plano
-            type: string
-          - name: duracao
-            label: Duração (ex. 3 meses)
-            type: string
-          - name: preco_pix
-            label: Preço no Pix (só o número)
-            type: number
-          - name: cartao
-            label: Texto do cartão (linha azul)
-            type: string
-          - name: itens
-            label: O que inclui
-            type: string
-            list: true
-          - name: recomendado
-            label: Destacar como "Recomendado"
-            type: boolean
-
-      - name: observacao_pagamento
-        label: Frase abaixo dos planos
+    - name: whatsapp
+      label: WhatsApp (com 55 e DDD, ex. 5511999998888)
+      type: string
+    - name: email
+      label: E-mail
+      type: string
+    - name: instagram
+      label: Instagram (sem @)
+      type: string
+  - name: topo
+    label: Topo do site
+    type: object
+    fields:
+    - name: texto
+      label: Texto de apresentação
+      type: text
+    - name: foto
+      label: Foto principal
+      type: image
+    - name: selo
+      label: Selo sobre a foto (use **texto** para destacar)
+      type: string
+  - name: numeros
+    label: Números do topo
+    type: object
+    list: true
+    fields:
+    - name: valor
+      label: Número (ex. +100)
+      type: string
+    - name: texto
+      label: Texto embaixo
+      type: string
+  - name: quem_sou_eu
+    label: Quem sou eu - textos
+    type: object
+    fields:
+    - name: formacao
+      label: Formação (use **texto** para negrito)
+      type: text
+    - name: certificados
+      label: Formação - etiquetas (certificados)
+      type: string
+      list: true
+    - name: de_onde_eu_vim
+      label: De onde eu vim
+      type: text
+    - name: clubes
+      label: De onde eu vim - etiquetas (clubes)
+      type: string
+      list: true
+    - name: lesao
+      label: A lesão que mudou meu caminho - parágrafos
+      type: text
+      list: true
+    - name: endurance
+      label: Hoje, atleta de endurance - parágrafos
+      type: text
+      list: true
+    - name: esportes
+      label: Hoje, atleta de endurance - etiquetas (esportes)
+      type: string
+      list: true
+  - name: fotos_quem_sou_eu
+    label: Quem sou eu - fotos
+    type: object
+    fields:
+    - name: formacao
+      label: Formação
+      type: object
+      fields:
+      - name: foto
+        label: Foto
+        type: image
+      - name: inteira
+        label: Mostrar a foto inteira (sem cortar)
+        type: boolean
+    - name: de_onde_eu_vim
+      label: De onde eu vim
+      type: object
+      fields:
+      - name: foto
+        label: Foto
+        type: image
+      - name: inteira
+        label: Mostrar a foto inteira (sem cortar)
+        type: boolean
+    - name: lesao
+      label: A lesão que mudou meu caminho
+      type: object
+      fields:
+      - name: foto
+        label: Foto
+        type: image
+      - name: inteira
+        label: Mostrar a foto inteira (sem cortar)
+        type: boolean
+    - name: endurance
+      label: Hoje, atleta de endurance
+      type: object
+      fields:
+      - name: foto
+        label: Foto
+        type: image
+      - name: inteira
+        label: Mostrar a foto inteira (sem cortar)
+        type: boolean
+  - name: frase
+    label: Frase em destaque (use **palavra** para a parte azul)
+    type: text
+  - name: crencas
+    label: Quadros abaixo da frase
+    type: text
+    list: true
+  - name: missao
+    label: Missão
+    type: text
+  - name: visao
+    label: Visão
+    type: text
+  - name: valores
+    label: Valores
+    type: object
+    list: true
+    fields:
+    - name: nome
+      label: Valor
+      type: string
+    - name: descricao
+      label: Descrição
+      type: string
+  - name: servicos
+    label: Serviços - textos
+    type: object
+    fields:
+    - name: alta_performance
+      label: 01 - Alta performance esportiva
+      type: object
+      fields:
+      - name: descricao
+        label: Descrição
+        type: text
+      - name: itens
+        label: Lista
         type: string
-
-      - name: perguntas
-        label: Perguntas frequentes
-        type: object
         list: true
-        fields:
-          - name: pergunta
-            label: Pergunta
-            type: string
-          - name: resposta
-            label: Resposta
-            type: text
+    - name: saude
+      label: 02 - Saúde e qualidade de vida
+      type: object
+      fields:
+      - name: descricao
+        label: Descrição
+        type: text
+      - name: itens
+        label: Lista
+        type: string
+        list: true
+    - name: emagrecimento
+      label: 03 - Emagrecimento e hipertrofia
+      type: object
+      fields:
+      - name: descricao
+        label: Descrição
+        type: text
+      - name: itens
+        label: Lista
+        type: string
+        list: true
+  - name: fotos_servicos
+    label: Serviços - fotos
+    type: object
+    fields:
+    - name: alta_performance
+      label: 01 - Alta performance esportiva
+      type: object
+      fields:
+      - name: foto
+        label: Foto
+        type: image
+      - name: inteira
+        label: Mostrar a foto inteira (sem cortar)
+        type: boolean
+    - name: saude
+      label: 02 - Saúde e qualidade de vida
+      type: object
+      fields:
+      - name: foto
+        label: Foto
+        type: image
+      - name: inteira
+        label: Mostrar a foto inteira (sem cortar)
+        type: boolean
+    - name: emagrecimento
+      label: 03 - Emagrecimento e hipertrofia
+      type: object
+      fields:
+      - name: foto
+        label: Foto
+        type: image
+      - name: inteira
+        label: Mostrar a foto inteira (sem cortar)
+        type: boolean
+  - name: metodo
+    label: Meu método - etapas
+    type: object
+    list: true
+    fields:
+    - name: titulo
+      label: Etapa
+      type: string
+    - name: texto
+      label: Descrição
+      type: string
+  - name: depoimentos
+    label: Depoimentos
+    type: object
+    list: true
+    fields:
+    - name: foto
+      label: Foto
+      type: image
+    - name: descricao_foto
+      label: Descrição da foto (para acessibilidade)
+      type: string
+    - name: titulo
+      label: Título (ex. Atleta de futsal · volta ao jogo)
+      type: string
+    - name: texto
+      label: Depoimento
+      type: text
+    - name: nome
+      label: Nome do aluno
+      type: string
+  - name: resultados
+    label: Resultados (antes e depois)
+    type: object
+    list: true
+    fields:
+    - name: foto
+      label: Foto
+      type: image
+    - name: descricao_foto
+      label: Descrição da foto (para acessibilidade)
+      type: string
+    - name: titulo
+      label: Título (ex. 2 meses)
+      type: string
+    - name: texto
+      label: Texto
+      type: string
+  - name: consultoria
+    label: Consultoria online
+    type: object
+    fields:
+    - name: para_quem
+      label: Para quem é
+      type: text
+    - name: como_funciona
+      label: Como funciona (quadros)
+      type: object
+      list: true
+      fields:
+      - name: icone
+        label: Ícone (emoji)
+        type: string
+      - name: titulo
+        label: Título
+        type: string
+      - name: texto
+        label: Texto
+        type: text
+    - name: passos
+      label: Passos para contratar
+      type: string
+      list: true
+  - name: planos
+    label: Planos da consultoria
+    type: object
+    list: true
+    fields:
+    - name: nome
+      label: Nome do plano
+      type: string
+    - name: duracao
+      label: Duração (ex. 3 meses)
+      type: string
+    - name: preco_pix
+      label: Preço no Pix (só o número)
+      type: number
+    - name: cartao
+      label: Texto do cartão (linha azul)
+      type: string
+    - name: itens
+      label: O que inclui
+      type: string
+      list: true
+    - name: recomendado
+      label: Destacar como "Recomendado"
+      type: boolean
+  - name: observacao_pagamento
+    label: Frase abaixo dos planos
+    type: string
+  - name: presencial
+    label: Presencial e terapias
+    type: object
+    fields:
+    - name: texto
+      label: Texto de apresentação
+      type: text
+    - name: atendimentos
+      label: Atendimentos (quadros)
+      type: object
+      list: true
+      fields:
+      - name: icone
+        label: Ícone (emoji)
+        type: string
+      - name: titulo
+        label: Título
+        type: string
+      - name: texto
+        label: Texto
+        type: string
+    - name: informacoes
+      label: Informações (use **texto** para negrito)
+      type: string
+      list: true
+  - name: perguntas
+    label: Perguntas frequentes
+    type: object
+    list: true
+    fields:
+    - name: pergunta
+      label: Pergunta
+      type: string
+    - name: resposta
+      label: Resposta
+      type: text

@@ -8,6 +8,7 @@ import re
 from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, StrictUndefined
+from markupsafe import Markup, escape
 
 PASTA = Path(__file__).parent
 
@@ -26,6 +27,19 @@ def digitos(texto):
     return re.sub(r"\D", "", str(texto))
 
 
+def _marcar(texto, tag):
+    # No painel, **palavra** marca o trecho em destaque.
+    return Markup(re.sub(r"\*\*(.+?)\*\*", rf"<{tag}>\1</{tag}>", str(escape(texto))))
+
+
+def negrito(texto):
+    return _marcar(texto, "b")
+
+
+def destaque(texto):
+    return _marcar(texto, "span")
+
+
 def gerar():
     env = Environment(
         loader=FileSystemLoader(PASTA / "modelo"),
@@ -33,7 +47,7 @@ def gerar():
         keep_trailing_newline=True,
         undefined=StrictUndefined,
     )
-    env.filters.update(src=src, preco=preco, digitos=digitos)
+    env.filters.update(src=src, preco=preco, digitos=digitos, negrito=negrito, destaque=destaque)
     conteudo = json.loads((PASTA / "conteudo" / "site.json").read_text(encoding="utf-8"))
     html = env.get_template("pagina.html").render(**conteudo)
     (PASTA / "index.html").write_text(html, encoding="utf-8", newline="")
