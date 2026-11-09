@@ -1,0 +1,38 @@
+# Quando o conteúdo é salvo pelo painel (Pages CMS), gera o index.html de novo e publica.
+name: Gerar site
+
+on:
+  push:
+    branches: [main]
+    paths: ["conteudo/**", "modelo/**", "gerar.py"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+jobs:
+  gerar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install jinja2==3.1.6
+      - run: python gerar.py
+      - name: Salvar a página gerada
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- index.html; then
+            echo "Página já está atualizada."
+            exit 0
+          fi
+          git config user.name "JR Alta Performance"
+          git config user.email "andre_jrr@icloud.com"
+          git add index.html
+          git commit -m "Atualiza a página com o conteúdo do painel"
+          git push
+          # Commits feitos por esta automação não disparam o GitHub Pages sozinhos.
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" || true

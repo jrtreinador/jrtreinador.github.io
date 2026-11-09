@@ -1,0 +1,147 @@
+# Painel de edição (Pages CMS - app.pagescms.org)
+media:
+  input: fotos
+  output: /fotos
+
+content:
+  - name: site
+    label: Conteúdo do site
+    type: file
+    path: conteudo/site.json
+    format: json
+    fields:
+      - name: contato
+        label: Contato
+        type: object
+        fields:
+          - name: whatsapp
+            label: WhatsApp (com 55 e DDD, ex. 5511999998888)
+            type: string
+          - name: email
+            label: E-mail
+            type: string
+          - name: instagram
+            label: Instagram (sem @)
+            type: string
+
+      - name: topo
+        label: Topo do site
+        type: object
+        fields:
+          - name: texto
+            label: Texto de apresentação
+            type: text
+          - name: foto
+            label: Foto principal
+            type: image
+
+      - name: fotos_quem_sou_eu
+        label: Fotos de "Quem sou eu"
+        type: object
+        fields:
+          - name: formacao
+            label: Formação
+            type: image
+          - name: de_onde_eu_vim
+            label: De onde eu vim
+            type: image
+          - name: lesao
+            label: A lesão que mudou meu caminho
+            type: image
+          - name: endurance
+            label: Hoje - atleta de endurance
+            type: image
+
+      - name: fotos_servicos
+        label: Fotos dos serviços
+        type: object
+        fields:
+          - name: alta_performance
+            label: 01 - Alta performance esportiva
+            type: image
+          - name: saude
+            label: 02 - Saúde e qualidade de vida
+            type: image
+          - name: emagrecimento
+            label: 03 - Emagrecimento e hipertrofia
+            type: image
+
+      - name: depoimentos
+        label: Depoimentos
+        type: object
+        list: true
+        fields:
+          - name: foto
+            label: Foto
+            type: image
+          - name: descricao_foto
+            label: Descrição da foto (para acessibilidade)
+            type: string
+          - name: titulo
+            label: Título (ex. Atleta de futsal · volta ao jogo)
+            type: string
+          - name: texto
+            label: Depoimento
+            type: text
+          - name: nome
+            label: Nome do aluno
+            type: string
+
+      - name: resultados
+        label: Resultados (antes e depois)
+        type: object
+        list: true
+        fields:
+          - name: foto
+            label: Foto
+            type: image
+          - name: descricao_foto
+            label: Descrição da foto (para acessibilidade)
+            type: string
+          - name: titulo
+            label: Título (ex. 2 meses)
+            type: string
+          - name: texto
+            label: Texto
+            type: string
+
+      - name: planos
+        label: Planos da consultoria
+        type: object
+        list: true
+        fields:
+          - name: nome
+            label: Nome do plano
+            type: string
+          - name: duracao
+            label: Duração (ex. 3 meses)
+            type: string
+          - name: preco_pix
+            label: Preço no Pix (só o número)
+            type: number
+          - name: cartao
+            label: Texto do cartão (linha azul)
+            type: string
+          - name: itens
+            label: O que inclui
+            type: string
+            list: true
+          - name: recomendado
+            label: Destacar como "Recomendado"
+            type: boolean
+
+      - name: observacao_pagamento
+        label: Frase abaixo dos planos
+        type: string
+
+      - name: perguntas
+        label: Perguntas frequentes
+        type: object
+        list: true
+        fields:
+          - name: pergunta
+            label: Pergunta
+            type: string
+          - name: resposta
+            label: Resposta
+            type: text

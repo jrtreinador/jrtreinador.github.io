@@ -1,0 +1,83 @@
+{
+  "contato": {
+    "whatsapp": "5511950418384",
+    "email": "andre_jrr@icloud.com",
+    "instagram": "jr.treinadorr"
+  },
+  "topo": {
+    "texto": "Treinamento individualizado para alta performance esportiva, saúde e qualidade de vida, emagrecimento e hipertrofia. Presencial em São Paulo e consultoria online para o mundo inteiro.",
+    "foto": "fotos/jr-kettlebell-hd.jpg"
+  },
+  "fotos_quem_sou_eu": {
+    "formacao": "fotos/jr-athletic-lab-corpo.jpg",
+    "de_onde_eu_vim": "fotos/jr-futebol-chute.jpg",
+    "lesao": "fotos/jr-futsal-sao-caetano-11.jpg",
+    "endurance": "fotos/jr-corrida-praia.jpg"
+  },
+  "fotos_servicos": {
+    "alta_performance": "fotos/servico-performance-agachamento.jpg",
+    "saude": "fotos/servico-saude-supino.jpg",
+    "emagrecimento": "fotos/servico-forca-barra.jpg"
+  },
+  "depoimentos": [
+    {
+      "foto": "fotos/depoimento-heberty.jpg",
+      "descricao_foto": "Heberty Silva jogando futsal",
+      "titulo": "Atleta de futsal · volta ao jogo",
+      "texto": "Tive uma lesão séria de LCA, LCM e menisco e fiz toda minha recuperação e fortalecimento com você. Foi um processo longo, mas hoje consegui voltar a jogar sem dor e com muito mais confiança. Obrigado por toda ajuda e dedicação nesse período, fez total diferença pra mim 🙏",
+      "nome": "Heberty Silva"
+    }
+  ],
+  "resultados": [
+    {
+      "foto": "fotos/resultado-1.png",
+      "descricao_foto": "Antes e depois de aluno",
+      "titulo": "2 meses",
+      "texto": "Acompanhamento com treino individualizado."
+    },
+    {
+      "foto": "fotos/resultado-2.png",
+      "descricao_foto": "Antes e depois",
+      "titulo": "1 mês",
+      "texto": "Acompanhamento com treino individualizado."
+    }
+  ],
+  "planos": [
+    {
+      "nome": "Básico",
+      "duracao": "1 mês",
+      "preco_pix": 180,
+      "cartao": "cartão de crédito parcelado com juros da bandeira",
+      "itens": ["Avaliação inicial completa", "Treino no app Mfit", "Suporte 7 dias no WhatsApp"],
+      "recomendado": false
+    },
+    {
+      "nome": "Premium",
+      "duracao": "3 meses",
+      "preco_pix": 350,
+      "cartao": "cartão de crédito parcelado com juros da bandeira",
+      "itens": ["Tudo do Básico", "3 atualizações de treino", "Reavaliação e ajustes"],
+      "recomendado": true
+    },
+    {
+      "nome": "Elite",
+      "duracao": "6 meses",
+      "preco_pix": 550,
+      "cartao": "cartão de crédito parcelado com juros da bandeira",
+      "itens": ["Tudo do Premium", "6 atualizações de treino", "Melhor custo por mês"],
+      "recomendado": false
+    }
+  ],
+  "observacao_pagamento": "Pix ou cartão de crédito, à vista ou parcelado.",
+  "perguntas": [
+    {"pergunta": "Preciso já treinar para contratar a consultoria?", "resposta": "Não. O treino se adapta ao seu nível — do iniciante ao avançado, cada treino é individualizado."},
+    {"pergunta": "O treinamento é adaptado para iniciantes?", "resposta": "Sim."},
+    {"pergunta": "Posso contratar mesmo morando em outra cidade?", "resposta": "Sim, a consultoria online atende qualquer lugar do mundo."},
+    {"pergunta": "Como funciona a avaliação inicial?", "resposta": "Formulário de anamnese, avaliação do movimento por vídeo (para identificar possíveis disfunções articulares) e avaliação de assimetria de força (para ver se existe diferença de força entre as pernas)."},
+    {"pergunta": "Como são feitas as atualizações do treino?", "resposta": "Dentro do aplicativo Mfit, de acordo com a evolução de cada aluno."},
+    {"pergunta": "O treinamento é indicado para quem busca emagrecimento?", "resposta": "Sim. O treino ajuda a acelerar o metabolismo e o gasto de calorias."},
+    {"pergunta": "A preparação física serve para atletas amadores?", "resposta": "Sim — atletas amadores e também profissionais."},
+    {"pergunta": "Como faço para contratar?", "resposta": "Clique em “Fale comigo” e me chame no WhatsApp."},
+    {"pergunta": "Quais são as formas de pagamento?", "resposta": "Pix e cartão de crédito, à vista ou parcelado."}
+  ]
+}
